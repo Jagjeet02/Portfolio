@@ -1,0 +1,127 @@
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Preahvihear, monospace, sans-serif;
+    }
+
+    /* ===============================
+    HEADINGS
+    ================================= */
+    $primary: #facc15; // Accent Yellow
+    $secondary: #7c3aed; // Soft Purple Glow
+    $bg-dark: #0f172a; // Main Background
+    $bg-light-dark: #1e293b; // Card Background
+    $text-primary: #ffffff;
+    $text-secondary: #cbd5e1;
+    $text-muted: #94a3b8;
+    $border-color: rgba(255, 255, 255, 0.1);
+
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    h5 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    h6 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+
+    // ----------------------------------button---------------------
+
+
+    .btn {
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border: none;
+        font-weight: 500;
+    }
+
+    .btn.primary {
+        background: $primary;
+        color: #111827;
+    }
+
+    .btn.primary:hover {
+        transform: scale(1.05);
+    }
+
+    /* Secondary button */
+    .btn.secondary {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #e5e7eb;
+    }
+
+    .btn.secondary:hover {
+        // background: rgba(255, 255, 255, 0.1);
+        border: 1px solid $primary;
+    }
+
+    // -------------------------------------------section--------------------------------
+    .section {
+        // min-height: calc(100vh - 70px);
+        background: radial-gradient(circle at 20% 50%, #324a68, #0b1c2c 60%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #e5e7eb;
+        padding: 60px 20px;
+        position: relative;
+        overflow: hidden;
+        background: #161413;
+    }
+
+    /* Subtle gradient glow */
+    .section::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: #7c3aed;
+        opacity: 0.15;
+        filter: blur(150px);
+        left: -150px;
+        top: 200px;
+        border-radius: 50%;
+    }
+
+    // ------------------------------------------label-----------------
+    .label {
+        color: $primary;
+    }

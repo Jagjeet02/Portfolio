@@ -1,0 +1,247 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Preahvihear, monospace, sans-serif;
+}
+
+/*------------------------- Header_start--------------------------------- */
+.header {
+  width: 100%;
+  padding: 20px 60px;
+  background: #0f0f0f;
+}
+
+/* Flex Wrapper */
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo a {
+  text-decoration: none;
+  color: #d4d4d4;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo a:hover {
+  color: #ffffff;
+}
+
+/* Navigation */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #9c9c9c;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 6px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.nav-list li a:hover {
+  color: #ffffff;
+}
+
+/* Yellow underline effect */
+.nav-list li.active a {
+  color: #ffffff;
+}
+
+.nav-list li.active a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background-color: #facc15; /* yellow */
+  border-radius: 2px;
+}
+
+/* Animated underline on hover */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background-color: #facc15;
+  transition: 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #facc15;
+  border-radius: 2px;
+}
+
+/*------------------------- Header_end--------------------------------- */
+/*------------------------- Hero-Section_end--------------------------------- */
+.hero {
+  background: radial-gradient(circle at 20% 50%, #324a68, #0b1c2c 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #e5e7eb;
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #7c3aed;
+  opacity: 0.15;
+  filter: blur(150px);
+  left: -150px;
+  top: 200px;
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Profile */
+.profile-wrapper {
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+.profile-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border: 5px solid #ffffff;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Title */
+.hero-title {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+/* Primary button */
+.btn.primary {
+  background: #ffffff;
+  color: #111827;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+}
+
+/* Secondary button */
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e7eb;
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=main.css.map */
