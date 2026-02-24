@@ -118,8 +118,8 @@
 
 /*------------------------- Hero-Section_end--------------------------------- */
 .hero {
-    // min-height: calc(100vh - 70px);
-  background: radial-gradient(circle at 20% 50%, #324a68, #0b1c2c 60%);
+  // min-height: calc(100vh - 70px);
+  // background: radial-gradient(circle at 20% 50%, #324a68, #0b1c2c 60%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,76 +129,88 @@
   position: relative;
   overflow: hidden;
   background: #161413;
+  height: calc(100vh - 70px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #7c3aed;
+    opacity: 0.15;
+    filter: blur(150px);
+    left: -150px;
+    top: 200px;
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    z-index: 2;
+
+    .profile-wrapper {
+      margin-bottom: 20px;
+      background: transparent;
+      border-radius: 50%;
+
+      .profile-img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        border: 5px solid rgba(255, 255, 255, 0.2);
+        border: 5px solid #ffffff;
+        box-shadow: 0px 0px 6px $primary;
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 14px;
+      margin-bottom: 30px;
+      //   backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      // font-size: 28px;
+      line-height: 1.6;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      .social-icons {
+        display: flex;
+        gap: 12px;
+
+        a {
+          width: 45px;
+          height: 45px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #e5e7eb;
+          transition: 0.3s ease;
+        }
+      }
+    }
+
+  }
+
 }
 
-/* Subtle gradient glow */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: #7c3aed;
-  opacity: 0.15;
-  filter: blur(150px);
-  left: -150px;
-  top: 200px;
-  border-radius: 50%;
-}
-
-.hero-content {
-  max-width: 900px;
-  z-index: 2;
-}
-
-/* Profile */
-.profile-wrapper {
-  margin-bottom: 20px;
-  background: transparent;
-  border-radius: 50%;
-}
-
-.profile-img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  border: 5px solid #ffffff;
-  box-shadow: 0px 0px 6px $primary;
-}
-
-/* Badge */
-.badge {
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 14px;
-  margin-bottom: 30px;
-  //   backdrop-filter: blur(10px);
-}
-
-/* Title */
-.hero-title {
-  // font-size: 28px;
-  line-height: 1.6;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-.highlight {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
 .btn {
   padding: 14px 28px;
@@ -216,23 +228,9 @@
 
 
 /* Social Icons */
-.social-icons {
-  display: flex;
-  gap: 12px;
-}
 
-.social-icons a {
-  width: 45px;
-  height: 45px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e5e7eb;
-  transition: 0.3s ease;
-}
+
+
 
 .social-icons a:hover {
   background: rgba(255, 255, 255, 0.1);
