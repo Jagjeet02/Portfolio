@@ -1,0 +1,167 @@
+@use "./variable" as *;
+
+.experience-section {
+    //   padding: 120px 0;
+    //   background: $bg-dark;
+    //   position: relative;
+    //   color: $text-primary;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: $text-secondary;
+            font-size: 16px;
+
+            span {
+                color: $primary;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            align-items: start;
+            position: relative;
+
+            &:first-child {
+                margin-bottom: 100px;
+            }
+
+            .timeline-left,
+            .timeline-right {
+                h3 {
+                    font-size: 24px;
+                    font-weight: 600;
+
+                    span {
+                        font-size: 14px;
+                        color: $text-secondary;
+                        margin-left: 8px;
+                    }
+                }
+
+                p {
+                    margin: 16px 0;
+                    color: $text-secondary;
+                    line-height: 1.6;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 10px;
+                        position: relative;
+                        padding-left: 20px;
+                        color: $text-secondary;
+
+                        &::before {
+                            content: "✔";
+                            position: absolute;
+                            left: 0;
+                            color: $primary;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .badge {
+                    display: inline-block;
+                    background: rgba($primary, 0.15);
+                    color: $primary;
+                    padding: 6px 14px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+
+                .date {
+                    display: block;
+                    margin-top: 12px;
+                    font-size: 14px;
+                    color: $text-secondary;
+                }
+            }
+
+            .timeline-center {
+                display: flex;
+                justify-content: center;
+
+                .circle {
+                    width: 18px;
+                    height: 18px;
+                    background: $bg-dark;
+                    border: 3px solid $primary;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+
+            .empty {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+
+@media (max-width: 992px) {
+    .experience-section {
+        .timeline {
+            &::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 40px 1fr;
+                gap: 20px;
+
+                .timeline-left,
+                .timeline-right {
+                    grid-column: 2;
+                }
+
+                .timeline-center {
+                    grid-column: 1;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
+
+.timeline-sec {
+    text-align: right;
+}

@@ -35,7 +35,7 @@ const projects = [
         image: project3,
         link: "#",
     },
-        {
+    {
         title: "Freelancer",
         image: project4,
         link: "#",
@@ -48,26 +48,6 @@ const projects = [
     {
         title: "Finance AI",
         image: project6,
-        link: "#",
-    },
-        {
-        title: "Freelancer",
-        image: project7,
-        link: "#",
-    },
-    {
-        title: "Personal",
-        image: project8,
-        link: "#",
-    },
-    {
-        title: "Finance AI",
-        image: project9,
-        link: "#",
-    },
-        {
-        title: "Finance AI",
-        image: project10,
         link: "#",
     },
 ];
@@ -105,7 +85,7 @@ const HeroSection = () => {
                             alt="profile"
                             className="profile-img"
                         /> */
-                        <img src={profilePic} alt="profile" className="profile-img"/>}
+                            <img src={profilePic} alt="profile" className="profile-img" />}
                     </div>
 
                     {/* Tagline */}
@@ -159,9 +139,88 @@ const HeroSection = () => {
                             />
                         ))}
                     </div>
+                    <div className="view-more">
+                          <button className="btn primary">
+                            View More
+                        </button>
+                    </div>
                 </div>
             </section>
-            
+            <section className="experience-section section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Experiences</h2>
+                        <p>
+                            A summary of the <span>Design, Development & User-Centric Solutions</span>
+                            that have shaped my journey as a UI/UX Developer
+                        </p>
+                    </div>
+
+                    <div className="timeline">
+
+                        {/* CURRENT ROLE */}
+                        <div className="timeline-item">
+                            <div className="timeline-left">
+                                <h3>Sourcemash Technologies <span>(Full-Time)</span></h3>
+                                <div className="badge">UI / UX Developer</div>
+
+                                <p>
+                                    Leading the design and development of responsive web interfaces,
+                                    focusing on usability, performance, and scalable UI architecture.
+                                </p>
+
+                                <ul>
+                                    <li>Developed pixel-perfect, responsive UI using modern frontend technologies</li>
+                                    <li>Improved UX by refining layouts, navigation flow, and interaction patterns</li>
+                                    <li>Built reusable component-based UI structure for scalability</li>
+                                    <li>Optimized website performance and reduced loading time</li>
+                                    <li>Ensured accessibility standards and cross-browser compatibility</li>
+                                </ul>
+                            </div>
+
+                            <div className="timeline-center">
+                                <div className="circle"></div>
+                            </div>
+
+                            <div className="timeline-right">
+                                <span className="date">December 2025 – Present</span>
+                            </div>
+                        </div>
+
+
+                        {/* PREVIOUS ROLE */}
+                        <div className="timeline-item">
+                            <div className="timeline-left timeline-sec">
+                                <span className="date">June 2025 – December 2025</span>
+                            </div>
+
+                            <div className="timeline-center">
+                                <div className="circle"></div>
+                            </div>
+
+                            <div className="timeline-right">
+                                <h3>Sourcemash Technologies <span>(Internship)</span></h3>
+                                <div className="badge">UI / UX Intern</div>
+
+                                <p>
+                                    Assisted in designing and implementing user-friendly interfaces,
+                                    translating design concepts into responsive web layouts.
+                                </p>
+
+                                <ul>
+                                    <li>Converted Figma designs into functional frontend layouts</li>
+                                    <li>Worked closely with senior developers on UI improvements</li>
+                                    <li>Enhanced visual consistency and UI alignment across pages</li>
+                                    <li>Implemented basic animations and micro-interactions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
         </>
     )
 }
