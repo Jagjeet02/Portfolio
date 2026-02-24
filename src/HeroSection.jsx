@@ -18,6 +18,7 @@ import project7 from "./assets/projects/project1.png";
 import project8 from "./assets/projects/project1.png";
 import project9 from "./assets/projects/project1.png";
 import project10 from "./assets/projects/project1.png";
+import profilePic from "./assets/profile-pic.png";
 const projects = [
     {
         title: "Freelancer",
@@ -99,11 +100,12 @@ const HeroSection = () => {
                 <div className="hero-content">
                     {/* Profile Image */}
                     <div className="profile-wrapper">
-                        <img
+                        {/* <img
                             src="src/assets/profile-pic.png"
                             alt="profile"
                             className="profile-img"
-                        />
+                        /> */
+                        <img src={profilePic} alt="profile" className="profile-img"/>}
                     </div>
 
                     {/* Tagline */}
