@@ -291,8 +291,8 @@ const HeroSection = () => {
 
             <section className="skills-section section">
                 {/* Animated background orbs */}
-                <div className="orb"></div>
-                <div className="orb"></div>
+                {/* <div className="orb"></div>
+                <div className="orb"></div> */}
 
                 <div className="container">
                     <div className="section-header">
