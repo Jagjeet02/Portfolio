@@ -1,0 +1,63 @@
+@use "./variable" as *;
+
+.education-section {
+//   padding: 120px 0;
+//   background: $bg-dark;
+//   color: $text-primary;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    h2 {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: $text-secondary;
+
+      span {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .education-list {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .education-item {
+      padding: 30px;
+      margin-bottom: 30px;
+      background: $bg-light-dark;
+      border-radius: 16px;
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .institution {
+        color: $primary;
+        margin-bottom: 6px;
+      }
+
+      .details {
+        color: $text-secondary;
+        margin-bottom: 6px;
+      }
+
+      .duration {
+        font-size: 14px;
+        color: $text-secondary;
+      }
+    }
+  }
+}

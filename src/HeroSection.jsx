@@ -140,7 +140,7 @@ const HeroSection = () => {
                         ))}
                     </div>
                     <div className="view-more">
-                          <button className="btn primary">
+                        <button className="btn primary">
                             View More
                         </button>
                     </div>
@@ -219,6 +219,64 @@ const HeroSection = () => {
                     </div>
                 </div>
             </section>
+            <section className="education-section section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Education</h2>
+                        <p>
+                            Where <span>theory, fundamentals & practical learning</span> shaped
+                            my foundation as a Computer Science Engineer
+                        </p>
+                    </div>
+
+                    <div className="education-list">
+
+                        {/* B.Tech */}
+                        <div className="education-item">
+                            <div className="edu-left">
+                                <h3>B.Tech in Computer Science Engineering</h3>
+                                <p className="institution">
+                                    Guru Nanak Dev Engineering College, Ludhiana
+                                </p>
+                                <p className="details">
+                                    CGPA: <strong>7.8 / 10</strong>
+                                </p>
+                                <p className="duration">2021 – 2025</p>
+                            </div>
+                        </div>
+
+                        {/* 12th */}
+                        <div className="education-item">
+                            <div className="edu-left">
+                                <h3>Senior Secondary (12th)</h3>
+                                <p className="institution">
+                                    Govt. Sen. Sec. Smart School PAU, Ludhiana (PSEB)
+                                </p>
+                                <p className="details">
+                                    Percentage: <strong>84%</strong>
+                                </p>
+                                <p className="duration">2021</p>
+                            </div>
+                        </div>
+
+                        {/* 10th */}
+                        <div className="education-item">
+                            <div className="edu-left">
+                                <h3>Matriculation (10th)</h3>
+                                <p className="institution">
+                                    Preet Gobind Model High School, Jodhan (PSEB)
+                                </p>
+                                <p className="details">
+                                    Percentage: <strong>90%</strong>
+                                </p>
+                                <p className="duration">2019</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
 
 
         </>
