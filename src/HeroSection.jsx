@@ -97,7 +97,7 @@ const HeroSection = () => {
                     <h3 className="hero-title">
                         Hi, I’m <span className="highlight">Jagjeet Singh</span>, a UI/UX Developer
                         specializing in <span className="highlight">Responsive Web & Frontend Development</span>.
-                        I’m passionate about <em>creating user-centric and pixel-perfect digital experiences</em>
+                        I’m passionate about <em>creating user-centric and pixel-perfect digital experiences.</em>
                     </h3>
 
                     {/* Buttons */}
