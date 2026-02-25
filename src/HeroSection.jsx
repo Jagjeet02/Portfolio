@@ -1,24 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'; // Missing useState import!
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { FiMessageSquare } from "react-icons/fi";
 import { FiExternalLink } from "react-icons/fi";
 import ProjectCard from "./ProjectCard";
 
-// import project1 from "../assets/projects/project1.png";
-// import project2 from "../assets/projects/project1.png";
-// import project3 from "../assets/projects/project1.png";
 import project1 from "./assets/projects/project1.png";
 import project2 from "./assets/projects/project1.png";
 import project3 from "./assets/projects/project1.png";
 import project4 from "./assets/projects/project1.png";
 import project5 from "./assets/projects/project1.png";
 import project6 from "./assets/projects/project1.png";
-import project7 from "./assets/projects/project1.png";
-import project8 from "./assets/projects/project1.png";
-import project9 from "./assets/projects/project1.png";
-import project10 from "./assets/projects/project1.png";
+// import project10 from "./assets/projects/project1.png"; // Not used, commented out
 import profilePic from "./assets/profile-pic.png";
+
 const projects = [
     {
         title: "Freelancer",
@@ -51,7 +46,84 @@ const projects = [
         link: "#",
     },
 ];
+
 const HeroSection = () => {
+    // Moved useState inside the component!
+    const [activeCategory, setActiveCategory] = useState('all');
+
+    const categories = [
+        { id: 'all', label: 'All Skills', icon: '🚀' },
+        { id: 'frontend', label: 'Frontend', icon: '🎨' },
+        { id: 'ui', label: 'UI/UX', icon: '✨' },
+        { id: 'tools', label: 'Tools', icon: '🛠️' },
+        { id: 'backend', label: 'Backend', icon: '⚙️' }
+    ];
+
+    const skillGroups = [
+        {
+            category: 'frontend',
+            title: 'Frontend Development',
+            icon: '⚛️',
+            skills: [
+                { name: 'HTML5', level: 5 },
+                { name: 'CSS3', level: 5 },
+                { name: 'SCSS / SASS', level: 5 },
+                { name: 'JavaScript (ES6+)', level: 5 },
+                { name: 'React.js', level: 5 },
+                { name: 'Next.js', level: 4 },
+                { name: 'TypeScript', level: 4 },
+                { name: 'Bootstrap', level: 4 }
+            ]
+        },
+        {
+            category: 'ui',
+            title: 'UI / Styling',
+            icon: '🎯',
+            skills: [
+                { name: 'Responsive Design', level: 5 },
+                { name: 'Flexbox & Grid', level: 5 },
+                { name: 'Tailwind CSS', level: 4 },
+                { name: 'Animation', level: 4 },
+                { name: 'Framer Motion', level: 3 },
+                { name: 'Accessibility', level: 4 },
+                { name: 'Design Systems', level: 4 }
+            ]
+        },
+        {
+            category: 'tools',
+            title: 'Tools & Design',
+            icon: '🔧',
+            skills: [
+                { name: 'Figma', level: 4 },
+                { name: 'Git & GitHub', level: 5 },
+                { name: 'VS Code', level: 5 },
+                { name: 'Chrome DevTools', level: 5 },
+                { name: 'Postman', level: 4 },
+                { name: 'Webpack', level: 3 },
+                { name: 'Jest', level: 3 }
+            ]
+        },
+        {
+            category: 'backend',
+            title: 'Backend Basics',
+            icon: '💻',
+            skills: [
+                { name: 'Node.js', level: 4 },
+                { name: 'Express.js', level: 4 },
+                { name: 'SQL / PostgreSQL', level: 3 },
+                { name: 'MongoDB', level: 3 },
+                { name: 'REST APIs', level: 4 },
+                { name: 'GraphQL', level: 3 },
+                { name: 'Firebase', level: 3 }
+            ]
+        }
+    ];
+
+    // Moved filteredSkills inside the component
+    const filteredSkills = activeCategory === 'all'
+        ? skillGroups
+        : skillGroups.filter(group => group.category === activeCategory);
+
     return (
         <>
             <header className="header">
@@ -67,9 +139,9 @@ const HeroSection = () => {
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Projects</a></li>
                             <li><a href="#">Experiences</a></li>
+                            <li><a href="#">Skills</a></li>
                             <li><a href="#">Education</a></li>
                             <li><a href="#">Certification</a></li>
-                            <li><a href="#">Skills</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
@@ -80,12 +152,7 @@ const HeroSection = () => {
                 <div className="hero-content">
                     {/* Profile Image */}
                     <div className="profile-wrapper">
-                        {/* <img
-                            src="src/assets/profile-pic.png"
-                            alt="profile"
-                            className="profile-img"
-                        /> */
-                            <img src={profilePic} alt="profile" className="profile-img" />}
+                        <img src={profilePic} alt="profile" className="profile-img" />
                     </div>
 
                     {/* Tagline */}
@@ -119,6 +186,7 @@ const HeroSection = () => {
 
                 </div>
             </section>
+
             <section className="projects-section section">
                 <div className="container">
                     <div className="section-header">
@@ -146,12 +214,13 @@ const HeroSection = () => {
                     </div>
                 </div>
             </section>
+
             <section className="experience-section section">
                 <div className="container">
                     <div className="section-header">
                         <h2>Experiences</h2>
                         <p>
-                            A summary of the <span>Design, Development & User-Centric Solutions</span>
+                            A summary of the <span>Design, Development & User-Centric Solutions </span>
                             that have shaped my journey as a UI/UX Developer
                         </p>
                     </div>
@@ -219,66 +288,146 @@ const HeroSection = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="skills-section section">
+                {/* Animated background orbs */}
+                <div className="orb"></div>
+                <div className="orb"></div>
+
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Skills & Expertise</h2>
+                        <p>
+                            Crafting digital experiences with
+                            <span> modern technologies & best practices</span>
+                        </p>
+                    </div>
+
+                    {/* Interactive category tabs */}
+                    <div className="skill-categories">
+                        {categories.map(cat => (
+                            <button
+                                key={cat.id}
+                                className={`category-tab ${activeCategory === cat.id ? 'active' : ''}`}
+                                onClick={() => setActiveCategory(cat.id)}
+                            >
+                                <span style={{ marginRight: '3px' }}>{cat.icon}</span>
+                                {cat.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Skills grid */}
+                    <div className="skills-grid">
+                        {filteredSkills.map((group, index) => (
+                            <div className="skill-card" key={index}>
+                                <div className="card-header">
+                                    <span className="skill-icon">{group.icon}</span>
+                                    <h3>{group.title}</h3>
+                                </div>
+
+                                <ul className="skills-list">
+                                    {group.skills.map((skill, idx) => (
+                                        <li key={idx}>
+                                            {skill.name}
+                                            {/* Skill level indicator */}
+                                            <div className="skill-level">
+                                                {[1, 2, 3, 4, 5].map(level => (
+                                                    <span
+                                                        key={level}
+                                                        className={`level-dot ${level <= skill.level ? 'active' : ''}`}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section className="education-section section">
                 <div className="container">
                     <div className="section-header">
                         <h2>Education</h2>
                         <p>
-                            Where <span>theory, fundamentals & practical learning</span> shaped
-                            my foundation as a Computer Science Engineer
+                            The academic journey that built my <span>technical foundation</span>
                         </p>
                     </div>
 
-                    <div className="education-list">
+                    <div className="edu-timeline">
 
                         {/* B.Tech */}
-                        <div className="education-item">
-                            <div className="edu-left">
-                                <h3>B.Tech in Computer Science Engineering</h3>
+                        <div className="edu-item">
+                            <div className="edu-content">
+                                <h3>B.Tech – Computer Science Engineering</h3>
                                 <p className="institution">
                                     Guru Nanak Dev Engineering College, Ludhiana
                                 </p>
-                                <p className="details">
-                                    CGPA: <strong>7.8 / 10</strong>
-                                </p>
-                                <p className="duration">2021 – 2025</p>
+
+                                <div className="edu-metrics">
+                                    <div className="metric">
+                                        <span>CGPA</span>
+                                        <strong>7.8 / 10</strong>
+                                    </div>
+                                    <div className="metric">
+                                        <span>Duration</span>
+                                        <strong>2021 – 2025</strong>
+                                    </div>
+                                </div>
                             </div>
+                            <div className="edu-dot"></div>
                         </div>
 
                         {/* 12th */}
-                        <div className="education-item">
-                            <div className="edu-left">
+                        <div className="edu-item">
+                            <div className="edu-content">
                                 <h3>Senior Secondary (12th)</h3>
                                 <p className="institution">
                                     Govt. Sen. Sec. Smart School PAU, Ludhiana (PSEB)
                                 </p>
-                                <p className="details">
-                                    Percentage: <strong>84%</strong>
-                                </p>
-                                <p className="duration">2021</p>
+
+                                <div className="edu-metrics">
+                                    <div className="metric">
+                                        <span>Percentage</span>
+                                        <strong>84%</strong>
+                                    </div>
+                                    <div className="metric">
+                                        <span>Year</span>
+                                        <strong>2021</strong>
+                                    </div>
+                                </div>
                             </div>
+                            <div className="edu-dot"></div>
                         </div>
 
                         {/* 10th */}
-                        <div className="education-item">
-                            <div className="edu-left">
+                        <div className="edu-item">
+                            <div className="edu-content">
                                 <h3>Matriculation (10th)</h3>
                                 <p className="institution">
-                                    Preet Gobind Model High School, Jodhan (PSEB)
+                                    Preet Gobind Model High School, Ludhiana (PSEB)
                                 </p>
-                                <p className="details">
-                                    Percentage: <strong>90%</strong>
-                                </p>
-                                <p className="duration">2019</p>
+
+                                <div className="edu-metrics">
+                                    <div className="metric">
+                                        <span>Percentage</span>
+                                        <strong>90%</strong>
+                                    </div>
+                                    <div className="metric">
+                                        <span>Year</span>
+                                        <strong>2019</strong>
+                                    </div>
+                                </div>
                             </div>
+                            <div className="edu-dot"></div>
                         </div>
 
                     </div>
                 </div>
             </section>
-
-
-
         </>
     )
 }
