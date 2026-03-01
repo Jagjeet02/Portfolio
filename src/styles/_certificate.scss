@@ -1,0 +1,139 @@
+@use "./variable" as *;
+
+.certificate-section {
+  position: relative;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: $text-secondary;
+      font-size: 17px;
+
+      span {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .certificate-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* LEFT CONTENT */
+  .certificate-content {
+    text-align: left;
+    h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: $text-primary;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      background: rgba($primary, 0.15);
+      color: $primary;
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .certificate-duration {
+      font-size: 14px;
+      color: $text-muted;
+      margin-bottom: 20px;
+    }
+
+    .certificate-description {
+      color: $text-secondary;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .certificate-points {
+      list-style: none;
+      padding: 0;
+
+      li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 10px;
+        color: $text-secondary;
+
+        &::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          color: $primary;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  /* Divider */
+  .certificate-divider {
+    width: 2px;
+    height: 100%;
+    background: $border-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $bg-dark;
+      border: 3px solid $primary;
+    }
+  }
+
+  /* RIGHT IMAGE */
+  .certificate-image {
+    img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease;
+      aspect-ratio: 9/10;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .certificate-section {
+
+    .certificate-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .certificate-divider {
+      display: none;
+    }
+
+    .certificate-image {
+      margin-top: 40px;
+    }
+  }
+}

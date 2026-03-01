@@ -2,7 +2,6 @@ import React, { useState } from 'react'; // Missing useState import!
 import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { FiMessageSquare } from "react-icons/fi";
-import { FiExternalLink } from "react-icons/fi";
 import ProjectCard from "./ProjectCard";
 
 import project1 from "./assets/projects/project1.png";
@@ -11,8 +10,10 @@ import project3 from "./assets/projects/project1.png";
 import project4 from "./assets/projects/project1.png";
 import project5 from "./assets/projects/project1.png";
 import project6 from "./assets/projects/project1.png";
-// import project10 from "./assets/projects/project1.png"; // Not used, commented out
+
 import profilePic from "./assets/profile-pic.png";
+import certificate from "./assets/projects/mern-certificate.jpg";
+
 
 const projects = [
     {
@@ -55,8 +56,7 @@ const HeroSection = () => {
         { id: 'all', label: 'All Skills', icon: '🚀' },
         { id: 'frontend', label: 'Frontend', icon: '🎨' },
         { id: 'ui', label: 'UI/UX', icon: '✨' },
-        { id: 'tools', label: 'Tools', icon: '🛠️' },
-        { id: 'backend', label: 'Backend', icon: '⚙️' }
+        { id: 'tools', label: 'Tools', icon: '🛠️' }
     ];
 
     const skillGroups = [
@@ -102,20 +102,6 @@ const HeroSection = () => {
                 { name: 'Webpack', level: 3 },
                 { name: 'Jest', level: 3 }
             ]
-        },
-        {
-            category: 'backend',
-            title: 'Backend Basics',
-            icon: '💻',
-            skills: [
-                { name: 'Node.js', level: 4 },
-                { name: 'Express.js', level: 4 },
-                { name: 'SQL / PostgreSQL', level: 3 },
-                { name: 'MongoDB', level: 3 },
-                { name: 'REST APIs', level: 4 },
-                { name: 'GraphQL', level: 3 },
-                { name: 'Firebase', level: 3 }
-            ]
         }
     ];
 
@@ -137,12 +123,12 @@ const HeroSection = () => {
                     <nav className="nav">
                         <ul className="nav-list">
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Experiences</a></li>
-                            <li><a href="#">Skills</a></li>
-                            <li><a href="#">Education</a></li>
-                            <li><a href="#">Certification</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#experience">Experiences</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#education">Education</a></li>
+                            <li><a href="#certification">Certification</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -178,16 +164,16 @@ const HeroSection = () => {
                         </button>
 
                         <div className="social-icons">
-                            <a href="#"><FaLinkedinIn /></a>
-                            <a href="#"><FaGithub /></a>
-                            <a href="#"><FaTwitter /></a>
+                            <a href="www.linkedin.com/in/jagjeet-singh-b45a8731b"><FaLinkedinIn /></a>
+                            <a href="https://github.com/Jagjeet02"><FaGithub /></a>
+                            {/* <a href="#"><FaTwitter /></a> */}
                         </div>
                     </div>
 
                 </div>
             </section>
 
-            <section className="projects-section section">
+            <section className="projects-section section" id="projects">
                 <div className="container">
                     <div className="section-header">
                         <h2>Projects</h2>
@@ -215,7 +201,7 @@ const HeroSection = () => {
                 </div>
             </section>
 
-            <section className="experience-section section">
+            <section className="experience-section section" id="experience">
                 <div className="container">
                     <div className="section-header">
                         <h2>Experiences</h2>
@@ -289,10 +275,7 @@ const HeroSection = () => {
                 </div>
             </section>
 
-            <section className="skills-section section">
-                {/* Animated background orbs */}
-                {/* <div className="orb"></div>
-                <div className="orb"></div> */}
+            <section className="skills-section section" id="skills">
 
                 <div className="container">
                     <div className="section-header">
@@ -348,7 +331,7 @@ const HeroSection = () => {
                 </div>
             </section>
 
-            <section className="education-section section">
+            <section className="education-section section" id="education">
                 <div className="container">
                     <div className="section-header">
                         <h2>Education</h2>
@@ -423,6 +406,120 @@ const HeroSection = () => {
                                 </div>
                             </div>
                             <div className="edu-dot"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="certificate-section section" id="certification">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Certification</h2>
+                        <p>
+                            Professional training in
+                            <span> MERN Stack Development</span>
+                        </p>
+                    </div>
+
+                    <div className="certificate-wrapper">
+
+                        {/* LEFT CONTENT */}
+                        <div className="certificate-content">
+                            <h3>Solitaire Infosys Pvt. Ltd.</h3>
+                            <span className="badge">MERN Stack Trainee</span>
+
+                            <p className="certificate-duration">
+                                January 2025 – May 2025
+                            </p>
+
+                            <p className="certificate-description">
+                                Completed a 6-month industrial training program in MERN Stack Development
+                                with primary focus on frontend engineering and UI/UX implementation.
+                                Built responsive and interactive web interfaces using React.js while
+                                following modern design principles and performance best practices.
+                            </p>
+
+                            <ul className="certificate-points">
+                                <li>Designed and developed responsive user interfaces using React.js</li>
+                                <li>Converted UI designs into pixel-perfect, production-ready components</li>
+                                <li>Implemented reusable component-based architecture</li>
+                                <li>Applied modern CSS techniques (Flexbox, Grid, SCSS) for layout design</li>
+                                <li>Ensured cross-browser compatibility and accessibility standards</li>
+                                <li>Worked with basic REST API integration for dynamic data handling</li>
+                            </ul>
+                        </div>
+
+
+                        {/* Vertical Divider */}
+                        <div className="certificate-divider"></div>
+
+                        {/* RIGHT IMAGE */}
+                        <div className="certificate-image">
+                            <img src={certificate} alt="MERN Certificate" />
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="contact-section section" id="contact">
+                <div className="container">
+                    <div className="section-header">
+                        <h2>Let’s Connect</h2>
+                        <p>
+                            Have a project in mind or want to collaborate?
+                            <span> Let’s build something great.</span>
+                        </p>
+                    </div>
+
+                    <div className="contact-wrapper">
+
+                        {/* LEFT INFO */}
+                        <div className="contact-info">
+                            <h3>Get in Touch</h3>
+
+                            <div className="info-item">
+                                <span>Email</span>
+                                <p>jagjeetpanesar000@gmail.com</p>
+                            </div>
+
+                            <div className="info-item">
+                                <span>Phone</span>
+                                <p>+91 8360170678</p>
+                            </div>
+
+                            <div className="info-item">
+                                <span>Location</span>
+                                <p>Mohali, Punjab, India</p>
+                            </div>
+
+                            {/* <div className="social-links">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">GitHub</a>
+                                <a href="#">Portfolio</a>
+                            </div> */}
+                        </div>
+
+                        {/* RIGHT FORM */}
+                        <div className="contact-form">
+                            <form>
+                                <div className="form-group">
+                                    <input type="text" placeholder="Your Name" required />
+                                </div>
+
+                                <div className="form-group">
+                                    <input type="email" placeholder="Your Email" required />
+                                </div>
+
+                                <div className="form-group">
+                                    <textarea rows="5" placeholder="Your Message" required />
+                                </div>
+
+                                <button type="submit" className="btn primary">
+                                    Send Message
+                                </button>
+                            </form>
                         </div>
 
                     </div>

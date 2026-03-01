@@ -15,6 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
 
     .logo {
       a {
@@ -130,6 +132,7 @@
   overflow: hidden;
   background: #161413;
   height: calc(100vh - 70px);
+  max-height: 1000px;
 
   &::before {
     content: "";
@@ -145,7 +148,8 @@
   }
 
   .hero-content {
-    max-width: 900px;
+    // max-width: 900px;
+    max-width: 1200px;
     z-index: 2;
 
     .profile-wrapper {
@@ -203,12 +207,16 @@
           justify-content: center;
           color: #e5e7eb;
           transition: 0.3s ease;
+
+          &:hover {
+            border: 1px solid $primary;
+            color: $text-primary;
+            background-color: transparent;
+          }
         }
       }
     }
-
   }
-
 }
 
 

@@ -4,6 +4,7 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Preahvihear', monospace, sans-serif;
+        scroll-behavior: smooth;
     }
 
     body {
@@ -133,6 +134,18 @@
         filter: blur(150px);
         left: -150px;
         top: 200px;
+        border-radius: 50%;
+    }
+        .section::after {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: #7c3aed;
+        opacity: 0.15;
+        filter: blur(150px);
+        right: -150px;
+        bottom: 200px;
         border-radius: 50%;
     }
 

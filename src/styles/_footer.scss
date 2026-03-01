@@ -1,0 +1,40 @@
+@use "./variable" as *;
+
+.footer {
+  padding: 100px 0 50px;
+  background: $bg-dark;
+  position: relative;
+  text-align: center;
+  border-top: 1px solid $border-color;
+
+  .footer-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .footer-name {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba($text-primary, 0.05); // watermark effect
+    margin-bottom: 20px;
+  }
+
+  .footer-tagline {
+    font-size: 16px;
+    color: $text-secondary;
+    margin-bottom: 40px;
+  }
+
+  .footer-divider {
+    width: 80px;
+    height: 2px;
+    margin: 0 auto 30px;
+    background: linear-gradient(90deg, $primary, $secondary);
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: $text-muted;
+  }
+}
